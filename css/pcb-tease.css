@@ -1,11 +1,13 @@
 /* Stegonomic PCB tease
    ==================================================
-   A rare, brief glitch on the hero background: the screen flickers the
-   exact phosphor green from the game's own CRT color scheme, and a
-   couple of thin torn slivers of a real board render (pulled straight
-   from the game's own renderer) show through for a fraction of a second
-   before it all snaps back to normal. Purely decorative — aria-hidden,
-   no interaction, never blocks the page underneath it.
+   A rare, brief glitch on the hero background: the screen flickers a
+   phosphor color from the game's own CRT color scheme (green most of
+   the time, occasionally amber — pcb-tease.js picks per-glitch, mirroring
+   the game's own color-scheme setting), and a couple of thin torn slivers
+   of a real board render (pulled straight from the game's own renderer)
+   show through for a fraction of a second before it all snaps back to
+   normal. Purely decorative — aria-hidden, no interaction, never blocks
+   the page underneath it.
 
    Layered between the particle canvas and the existing .gradient-overlay
    in index.html, so the same black-to-transparent vignette that already
@@ -46,10 +48,16 @@
   inset: 0;
   /* pcbgame's own --accent/--copper in its "green" CRT theme
      (src/index.css) — reused verbatim so this reads as the same
-     phosphor, not a lookalike. */
+     phosphor, not a lookalike. Swapped for amber below on the glitches
+     pcb-tease.js picks for it. */
   background: #4dff4d;
   mix-blend-mode: screen;
   opacity: 0;
+}
+
+.pcb-tease.is-amber .pcb-tease__flash {
+  /* pcbgame's own "amber" CRT theme accent (src/index.css). */
+  background: #ffb000;
 }
 
 .pcb-tease.is-glitching .pcb-tease__slice--1,

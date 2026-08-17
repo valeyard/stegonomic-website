@@ -18,6 +18,11 @@
   if (!el) return;
 
   var GLITCH_DURATION_MS = 380;
+  // Green most of the time; amber (pcbgame's other CRT phosphor option,
+  // see css/pcb-tease.css's .is-amber) on roughly a third of glitches —
+  // "occasionally," not every other time, so green still reads as the
+  // default.
+  var AMBER_CHANCE = 0.3;
 
   function randomDelay() {
     // Roughly every 20-45s. Rare enough that it reads as "wait, did that
@@ -30,9 +35,12 @@
   }
 
   function glitch() {
+    var amber = Math.random() < AMBER_CHANCE;
     el.classList.add("is-glitching");
+    if (amber) el.classList.add("is-amber");
     window.setTimeout(function () {
       el.classList.remove("is-glitching");
+      el.classList.remove("is-amber");
     }, GLITCH_DURATION_MS);
     scheduleNext();
   }
