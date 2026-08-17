@@ -1,0 +1,104 @@
+/* Stegonomic PCB tease
+   ==================================================
+   A rare, brief glitch on the hero background: the screen flickers the
+   exact phosphor green from the game's own CRT color scheme, and a
+   couple of thin torn slivers of a real board render (pulled straight
+   from the game's own renderer) show through for a fraction of a second
+   before it all snaps back to normal. Purely decorative — aria-hidden,
+   no interaction, never blocks the page underneath it.
+
+   Layered between the particle canvas and the existing .gradient-overlay
+   in index.html, so the same black-to-transparent vignette that already
+   dims the particles dims this too, instead of needing its own fade.
+
+   Deliberately subtle: peak opacities here are low on purpose. An
+   earlier pass at ~0.85 per slice read as "the page turns into a PCB,"
+   not a glitch — the whole point is that most visitors never
+   consciously register it. */
+
+.pcb-tease {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pcb-tease__slice {
+  position: absolute;
+  inset: 0;
+  background: url("../images/pcb-reveal.png") center center / cover no-repeat;
+  opacity: 0;
+}
+
+/* Four thin bands of the same image, each clipped to its own strip —
+   visually one continuous board (same background, same position), but
+   independently animatable so the reveal tears each strip sideways by a
+   different amount instead of moving as one flat sheet. Kept narrow
+   (~2-3% of height each) so at any instant this is a sliver, not a
+   panel. */
+.pcb-tease__slice--1 { clip-path: inset(21% 0 77% 0); }
+.pcb-tease__slice--2 { clip-path: inset(44% 0 54% 0); }
+.pcb-tease__slice--3 { clip-path: inset(63% 0 34.5% 0); }
+.pcb-tease__slice--4 { clip-path: inset(83% 0 15% 0); }
+
+.pcb-tease__flash {
+  position: absolute;
+  inset: 0;
+  /* pcbgame's own --accent/--copper in its "green" CRT theme
+     (src/index.css) — reused verbatim so this reads as the same
+     phosphor, not a lookalike. */
+  background: #4dff4d;
+  mix-blend-mode: screen;
+  opacity: 0;
+}
+
+.pcb-tease.is-glitching .pcb-tease__slice--1,
+.pcb-tease.is-glitching .pcb-tease__slice--3 {
+  animation: pcb-tease-slice-a 380ms steps(1, end) 1;
+}
+
+.pcb-tease.is-glitching .pcb-tease__slice--2,
+.pcb-tease.is-glitching .pcb-tease__slice--4 {
+  animation: pcb-tease-slice-b 380ms steps(1, end) 1;
+}
+
+.pcb-tease.is-glitching .pcb-tease__flash {
+  animation: pcb-tease-flash 380ms steps(1, end) 1;
+}
+
+@keyframes pcb-tease-slice-a {
+  0%   { opacity: 0; transform: translateX(0); }
+  8%   { opacity: .32; transform: translateX(-4px); }
+  16%  { opacity: 0; transform: translateX(0); }
+  46%  { opacity: .22; transform: translateX(3px); }
+  54%  { opacity: 0; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+@keyframes pcb-tease-slice-b {
+  0%   { opacity: 0; transform: translateX(0); }
+  10%  { opacity: .28; transform: translateX(5px); }
+  18%  { opacity: 0; transform: translateX(0); }
+  50%  { opacity: .2; transform: translateX(-4px); }
+  58%  { opacity: 0; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(0); }
+}
+
+@keyframes pcb-tease-flash {
+  0%   { opacity: 0; }
+  8%   { opacity: .14; }
+  16%  { opacity: 0; }
+  48%  { opacity: .09; }
+  56%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* A flickering flash is exactly the kind of motion prefers-reduced-motion
+   exists for — disabled outright rather than offering a toned-down
+   version, same call as pcbgame's own reducedMotion setting skipping its
+   confetti/count-up animations entirely instead of playing a lesser one. */
+@media (prefers-reduced-motion: reduce) {
+  .pcb-tease {
+    display: none;
+  }
+}
