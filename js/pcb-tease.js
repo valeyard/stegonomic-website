@@ -17,7 +17,10 @@
   var el = document.querySelector(".pcb-tease");
   if (!el) return;
 
-  var GLITCH_DURATION_MS = 380;
+  // Must match pcb-tease.css's animation-duration on .pcb-tease__slice--*
+  // and .pcb-tease__flash — this is what tells us when it's safe to
+  // remove .is-glitching again.
+  var GLITCH_DURATION_MS = 650;
   // Green most of the time; amber (pcbgame's other CRT phosphor option,
   // see css/pcb-tease.css's .is-amber) on roughly a third of glitches —
   // "occasionally," not every other time, so green still reads as the

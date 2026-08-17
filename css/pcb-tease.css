@@ -62,42 +62,47 @@
 
 .pcb-tease.is-glitching .pcb-tease__slice--1,
 .pcb-tease.is-glitching .pcb-tease__slice--3 {
-  animation: pcb-tease-slice-a 380ms steps(1, end) 1;
+  animation: pcb-tease-slice-a 650ms steps(1, end) 1;
 }
 
 .pcb-tease.is-glitching .pcb-tease__slice--2,
 .pcb-tease.is-glitching .pcb-tease__slice--4 {
-  animation: pcb-tease-slice-b 380ms steps(1, end) 1;
+  animation: pcb-tease-slice-b 650ms steps(1, end) 1;
 }
 
 .pcb-tease.is-glitching .pcb-tease__flash {
-  animation: pcb-tease-flash 380ms steps(1, end) 1;
+  animation: pcb-tease-flash 650ms steps(1, end) 1;
 }
 
+/* Same two-pulse shape as before, just stretched: each pulse now holds
+   at peak for ~20% of the animation instead of ~8%, and the animation
+   itself runs longer (650ms vs 380ms) — together, roughly 4x longer
+   actually visible on screen per pulse, not just a longer gap between
+   two still-instant blips. */
 @keyframes pcb-tease-slice-a {
   0%   { opacity: 0; transform: translateX(0); }
   8%   { opacity: .32; transform: translateX(-4px); }
-  16%  { opacity: 0; transform: translateX(0); }
-  46%  { opacity: .22; transform: translateX(3px); }
-  54%  { opacity: 0; transform: translateX(0); }
+  28%  { opacity: 0; transform: translateX(0); }
+  55%  { opacity: .22; transform: translateX(3px); }
+  75%  { opacity: 0; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(0); }
 }
 
 @keyframes pcb-tease-slice-b {
   0%   { opacity: 0; transform: translateX(0); }
   10%  { opacity: .28; transform: translateX(5px); }
-  18%  { opacity: 0; transform: translateX(0); }
-  50%  { opacity: .2; transform: translateX(-4px); }
-  58%  { opacity: 0; transform: translateX(0); }
+  30%  { opacity: 0; transform: translateX(0); }
+  58%  { opacity: .2; transform: translateX(-4px); }
+  78%  { opacity: 0; transform: translateX(0); }
   100% { opacity: 0; transform: translateX(0); }
 }
 
 @keyframes pcb-tease-flash {
   0%   { opacity: 0; }
   8%   { opacity: .14; }
-  16%  { opacity: 0; }
-  48%  { opacity: .09; }
-  56%  { opacity: 0; }
+  28%  { opacity: 0; }
+  55%  { opacity: .09; }
+  75%  { opacity: 0; }
   100% { opacity: 0; }
 }
 
