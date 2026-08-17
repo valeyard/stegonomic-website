@@ -1525,7 +1525,9 @@ input::-moz-focus-inner {
   padding: 30px 60px 42px;
   position: absolute;
   left: 0;
+  right: 0;
   bottom: 0;
+  text-align: center;
 }
 
 .home-copyright a {
