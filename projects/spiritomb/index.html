@@ -61,11 +61,8 @@
         <article class="row project-detail">
 
             <div class="project__media project-detail__hero" data-initial="S">
-                <!-- TODO(spiritomb): supply images/projects/spiritomb/hero.jpg (16:9, ~1600x900). For a video instead, swap the <img> for
-                     <video src="../../images/projects/spiritomb/hero.mp4" poster="../../images/projects/spiritomb/hero.jpg" autoplay muted loop playsinline></video>.
-                     Until it exists, onerror removes the
-                     <img> and the lettered placeholder shows instead. -->
-                <img src="../../images/projects/spiritomb/hero.jpg" alt="Giant Spiritomb build" onerror="this.remove()">
+                <!-- muted looping video (no audio track); hero.jpg is its first frame, used as poster and on the projects card -->
+                <video src="../../images/projects/spiritomb/hero.mp4" poster="../../images/projects/spiritomb/hero.jpg" aria-label="Giant Spiritomb build" autoplay muted loop playsinline preload="auto"></video>
             </div>
 
             <div class="project-detail__body">
@@ -96,9 +93,7 @@
         <div class="row project-detail__gallery">
 
             <div class="project__media" data-initial="S">
-                <!-- TODO(spiritomb): supply images/projects/spiritomb/hero.jpg (same file as the main image above). Until it exists, onerror removes the
-                     <img> and the lettered placeholder shows instead. -->
-                <img src="../../images/projects/spiritomb/hero.jpg" alt="Giant Spiritomb build" loading="lazy" onerror="this.remove()">
+                <video src="../../images/projects/spiritomb/hero.mp4" poster="../../images/projects/spiritomb/hero.jpg" aria-label="Giant Spiritomb build" autoplay muted loop playsinline preload="metadata"></video>
             </div>
 
             <div class="project__media" data-initial="S">
