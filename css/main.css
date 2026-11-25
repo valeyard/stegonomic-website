@@ -2378,3 +2378,46 @@ html.no-csstransitions .home-content__main {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+
+/* -------------------------------------------------------------------
+ * ## home nav (top-left, mirrors .home-logo top-right)
+ * ------------------------------------------------------------------- */
+.home-nav {
+  z-index: 502;
+  position: absolute;
+  left: 60px;
+  top: 36px;
+  font-family: "metropolis-medium", sans-serif;
+  font-size: 1.3rem;
+  line-height: 3rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+.home-nav a {
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(236, 0, 140, 0.6);
+  padding-bottom: .3rem;
+}
+
+.home-nav a:hover,
+.home-nav a:focus {
+  color: #ec008c;
+  border-color: #ec008c;
+}
+
+@media only screen and (max-width: 1400px) {
+  .home-nav {
+    left: 35px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .home-nav {
+    left: 30px;
+    top: 34px;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+  }
+}
