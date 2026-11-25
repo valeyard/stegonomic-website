@@ -70,7 +70,10 @@
 
             <div class="project-detail__body">
             <p>
-                I wanted a doorbell I fully understood and controlled: no cloud account, no subscription, nothing leaving my home network. The system uses ESP32 boards for the button and <!-- TODO(esp32-doorbell): fill in [receiver/chime unit(s)] --><span class="todo-placeholder">[receiver/chime unit(s)]</span>, all talking through a local message broker.
+                I wanted a doorbell I fully understood and controlled: no cloud account, no subscription, nothing leaving my home network. The system is two ESP32 units talking through a local message broker. One is mounted on the wall next to my flat's intercom system; it receives the ring and relays it to the second unit in the living room, which has the flashing light.
+            </p>
+            <p>
+                The hardest part was making the messaging between the two ESP32s reliable. At first, the little ESP32-C3 mini boards I was using didn't have a strong enough signal to make it through the walls; upgrading to the WROOM versions fixed that.
             </p>
             <p>
                 My first version used ESP-NOW, Espressif's direct device-to-device protocol. It worked, but reliability was inconsistent, and an ESP-IDF v5.5 update changed the callback API underneath me. Rather than patch around it, I moved the system onto MQTT with a Mosquitto broker running in Docker. That gave me proper delivery, visibility into every message, and a clean way to add more devices later.
@@ -88,13 +91,13 @@
                 To see what was happening, I built a monitoring dashboard as a single HTML file with no build step and no server code. It connects to the broker over WebSockets and shows presses and device status live.
             </p>
             <p>
-                <!-- TODO(esp32-doorbell): fill in [One line on current state, e.g. "It's been installed and running at home since [month/year]."] --><span class="todo-placeholder">[One line on current state, e.g. "It's been installed and running at home since [month/year]."]</span>
+                It's been installed and running at home since February 2026.
             </p>
             </div>
 
             <h3>Built with</h3>
             <p class="project-detail__built">
-                ESP32-C3 / ESP32-WROOM-32 · Arduino / ESP-IDF · MQTT (Mosquitto in Docker) · WebSockets · HTML/JS · <!-- TODO(esp32-doorbell): fill in [printed enclosures, if any] --><span class="todo-placeholder">[printed enclosures, if any]</span>
+                ESP32-C3 / ESP32-WROOM-32 · Arduino / ESP-IDF · MQTT (Mosquitto in Docker) · WebSockets · HTML/JS · 3D-printed enclosures
             </p>
 
         </article>
