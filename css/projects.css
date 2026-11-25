@@ -259,6 +259,18 @@ body.page-projects {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* project pages show the whole photo (portrait shots included), letterboxed
+   on the dark media background; only the listing cards crop to fill */
+.project-detail__hero img,
+.project-detail__hero video,
+.project-detail__gallery .project__media img {
+  object-fit: contain;
+}
+
+.project-detail__gallery .project__media {
+  aspect-ratio: 4 / 3;
+}
+
 .project-detail__body {
   max-width: 76rem;
   font-size: 1.8rem;
