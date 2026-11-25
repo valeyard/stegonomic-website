@@ -203,7 +203,6 @@ body.page-projects {
   padding: 2.4rem 2.8rem 2.8rem;
 }
 
-.project__tags,
 .project__links {
   list-style: none;
   margin: 0;
@@ -212,17 +211,6 @@ body.page-projects {
   flex-wrap: wrap;
 }
 
-.project__tags {
-  gap: .6rem 1.8rem;
-  font-family: "metropolis-medium", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.project__tags li,
 .project__links li {
   margin: 0;
   padding: 0;
@@ -292,6 +280,14 @@ body.page-projects {
 
 .project-detail__footnote {
   margin: 4.8rem 0 0;
+}
+
+.project-detail__built {
+  max-width: 76rem;
+  font-size: 1.6rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
 }
 
 .project-detail__gallery {

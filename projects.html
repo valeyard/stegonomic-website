@@ -63,7 +63,7 @@
           - Media: images/projects/<slug>/hero.jpg (16:9, ~1600x900) plus
             gallery-1.jpg..gallery-3.jpg. A missing image removes itself
             (onerror) and the lettered placeholder shows instead.
-          - Tags: one <li> per "Built with" item.
+          - "Built with" lives on the project page only, as one line split by " · ".
           - [Unfilled copy]: <span class="todo-placeholder"> + a TODO comment.
         -->
         <div class="row projects-grid">
@@ -75,13 +75,6 @@
                     <img src="images/projects/spiritomb/hero.jpg" alt="Giant Spiritomb build" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
-                    <ul class="project__tags">
-                        <li>Bambu Lab A1 with grey matte PLA and purple translucent PLA</li>
-                        <li>Fusion 360</li>
-                        <li>224-LED hologram fan</li>
-                        <li>garage door wireless button used to turn it on and off remotely</li>
-                        <li>filament finish, no painting</li>
-                    </ul>
                     <h2 class="project__title">Giant Spiritomb build</h2>
                     <p class="project__desc">
                         A life-size, fully lit model of Spiritomb, with an animated holographic face that appears to float inside the stone.
@@ -99,18 +92,6 @@
                     <img src="images/projects/car-seat-chair-v1/hero.jpg" alt="Car seat computer chair (V1)" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
-                    <ul class="project__tags">
-                        <li>2019 Kia Stinger GT seat</li>
-                        <li>19 V PSU</li>
-                        <li>HW-845 charger</li>
-                        <li>buck converter</li>
-                        <li>dual-Schottky OR-ing failover</li>
-                        <li>small 12 V lead-acid battery</li>
-                        <li>heavy-duty castors and star base</li>
-                        <li>short heavy-duty hydraulic cylinder</li>
-                        <li>heavy-duty office chair plate</li>
-                        <li>10 mm mild steel adapter plate to the seat rails</li>
-                    </ul>
                     <h2 class="project__title">Car seat computer chair (V1)</h2>
                     <p class="project__desc">
                         A real car seat converted into a desk chair, with its powered adjustment working and a custom power system that switches between mains and battery automatically.
@@ -128,14 +109,6 @@
                     <img src="images/projects/esp32-doorbell/hero.jpg" alt="ESP32 wireless doorbell" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
-                    <ul class="project__tags">
-                        <li>ESP32-C3 / ESP32-WROOM-32</li>
-                        <li>Arduino / ESP-IDF</li>
-                        <li>MQTT (Mosquitto in Docker)</li>
-                        <li>WebSockets</li>
-                        <li>HTML/JS</li>
-                        <li><!-- TODO(esp32-doorbell): fill in [printed enclosures, if any] --><span class="todo-placeholder">[printed enclosures, if any]</span></li>
-                    </ul>
                     <h2 class="project__title">ESP32 wireless doorbell</h2>
                     <p class="project__desc">
                         A self-built wireless doorbell system on ESP32 microcontrollers, with a local MQTT backend and a live monitoring dashboard in the browser.
