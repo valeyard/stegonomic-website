@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>ESP32 wireless doorbell | Stegonomic Studios</title>
+    <meta name="description" content="A self-built wireless doorbell system on ESP32 microcontrollers, with a local MQTT backend and a live monitoring dashboard in the browser.">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/vendor.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/projects.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="../../js/modernizr.js"></script>
+    <script src="../../js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../../images/mobile-logo.png" type="image/x-icon">
+    <link rel="icon" href="../../images/mobile-logo.png" type="image/x-icon">
+
+</head>
+
+<body class="page-projects">
+
+    <div id="particles-js" class="projects-particles" aria-hidden="true"></div>
+    <div class="projects-vignette" aria-hidden="true"></div>
+
+    <!-- header
+    ================================================== -->
+    <header class="projects-header">
+        <a class="projects-back" href="../../projects.html">&larr; All projects</a>
+        <a class="projects-logo" href="../../index.html">
+            <img src="../../images/horizontal-logo-trimmed.png" alt="Stegonomic Studios — Home">
+        </a>
+    </header>
+
+    <main class="projects">
+
+        <div class="row projects-intro">
+            <h3>Past Projects</h3>
+            <h1>ESP32 wireless doorbell</h1>
+            <p>
+                A self-built wireless doorbell system on ESP32 microcontrollers, with a local MQTT backend and a live monitoring dashboard in the browser.
+            </p>
+        </div>
+
+        <!-- write-up
+        ================================================== -->
+        <article class="row project-detail">
+
+            <div class="project__media project-detail__hero" data-initial="E">
+                <!-- TODO(esp32-doorbell): supply images/projects/esp32-doorbell/hero.jpg (16:9, ~1600x900). For a video instead, swap the <img> for
+                     <video src="../../images/projects/esp32-doorbell/hero.mp4" poster="../../images/projects/esp32-doorbell/hero.jpg" autoplay muted loop playsinline></video>.
+                     Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/esp32-doorbell/hero.jpg" alt="ESP32 wireless doorbell" onerror="this.remove()">
+            </div>
+
+            <div class="project-detail__body">
+            <p>
+                I wanted a doorbell I fully understood and controlled: no cloud account, no subscription, nothing leaving my home network. The system uses ESP32 boards for the button and <!-- TODO(esp32-doorbell): fill in [receiver/chime unit(s)] --><span class="todo-placeholder">[receiver/chime unit(s)]</span>, all talking through a local message broker.
+            </p>
+            <p>
+                My first version used ESP-NOW, Espressif's direct device-to-device protocol. It worked, but reliability was inconsistent, and an ESP-IDF v5.5 update changed the callback API underneath me. Rather than patch around it, I moved the system onto MQTT with a Mosquitto broker running in Docker. That gave me proper delivery, visibility into every message, and a clean way to add more devices later.
+            </p>
+            <p>
+                Along the way I worked through:
+            </p>
+            <ul>
+                <li>Docker networking quirks on Windows</li>
+                <li>message delays caused by client-side buffering</li>
+                <li>clients knocking each other offline through duplicate IDs</li>
+                <li>moving the firmware between ESP32-C3 and ESP32-WROOM-32 boards</li>
+            </ul>
+            <p>
+                To see what was happening, I built a monitoring dashboard as a single HTML file with no build step and no server code. It connects to the broker over WebSockets and shows presses and device status live.
+            </p>
+            <p>
+                <!-- TODO(esp32-doorbell): fill in [One line on current state, e.g. "It's been installed and running at home since [month/year]."] --><span class="todo-placeholder">[One line on current state, e.g. "It's been installed and running at home since [month/year]."]</span>
+            </p>
+            </div>
+
+            <h3>Built with</h3>
+            <ul class="project__tags">
+                <li>ESP32-C3 / ESP32-WROOM-32</li>
+                <li>Arduino / ESP-IDF</li>
+                <li>MQTT (Mosquitto in Docker)</li>
+                <li>WebSockets</li>
+                <li>HTML/JS</li>
+                <li><!-- TODO(esp32-doorbell): fill in [printed enclosures, if any] --><span class="todo-placeholder">[printed enclosures, if any]</span></li>
+            </ul>
+
+        </article>
+
+        <!-- gallery
+        ================================================== -->
+        <div class="row projects-grid project-detail__gallery">
+
+            <div class="project__media" data-initial="E">
+                <!-- TODO(esp32-doorbell): supply images/projects/esp32-doorbell/gallery-1.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/esp32-doorbell/gallery-1.jpg" alt="ESP32 wireless doorbell, gallery image 1" loading="lazy" onerror="this.remove()">
+            </div>
+
+            <div class="project__media" data-initial="E">
+                <!-- TODO(esp32-doorbell): supply images/projects/esp32-doorbell/gallery-2.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/esp32-doorbell/gallery-2.jpg" alt="ESP32 wireless doorbell, gallery image 2" loading="lazy" onerror="this.remove()">
+            </div>
+
+            <div class="project__media" data-initial="E">
+                <!-- TODO(esp32-doorbell): supply images/projects/esp32-doorbell/gallery-3.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/esp32-doorbell/gallery-3.jpg" alt="ESP32 wireless doorbell, gallery image 3" loading="lazy" onerror="this.remove()">
+            </div>
+
+        </div> <!-- end gallery -->
+
+    </main>
+
+    <footer class="row projects-footer">
+        <span>© 2026 Stegonomic. All rights reserved.</span>
+    </footer>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/plugins.js"></script>
+    <script src="../../js/polygons.js"></script>
+
+</body>
+
+</html>

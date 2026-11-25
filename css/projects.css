@@ -92,7 +92,8 @@ body.page-projects {
   padding-bottom: 6rem;
 }
 
-.projects-intro h3 {
+.projects-intro h3,
+.project-detail h3 {
   font-family: "metropolis-medium", sans-serif;
   font-size: 1.4rem;
   line-height: 1.286;
@@ -104,7 +105,8 @@ body.page-projects {
   position: relative;
 }
 
-.projects-intro h3::before {
+.projects-intro h3::before,
+.project-detail h3::before {
   content: "";
   display: block;
   background-color: rgba(236, 0, 140, 0.6);
@@ -180,7 +182,8 @@ body.page-projects {
   color: rgba(255, 255, 255, 0.12);
 }
 
-.project__media img {
+.project__media img,
+.project__media video {
   position: relative;
   display: block;
   width: 100%;
@@ -261,9 +264,54 @@ body.page-projects {
 }
 
 /* -------------------------------------------------------------------
+ * project detail pages (projects/<slug>/index.html)
+ * ------------------------------------------------------------------- */
+.project-detail__hero {
+  margin-bottom: 6rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-detail__body {
+  max-width: 76rem;
+  font-size: 1.8rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.project-detail__body p {
+  margin: 0 0 2.4rem;
+}
+
+.project-detail__body ul {
+  margin: 0 0 2.4rem 2.4rem;
+}
+
+.project-detail h3 {
+  margin-top: 6rem;
+}
+
+.project-detail__footnote {
+  margin: 4.8rem 0 0;
+}
+
+.project-detail__gallery {
+  padding-top: 6rem;
+}
+
+/* [square-bracket] copy still to be written; see TODO comments in source */
+.todo-placeholder {
+  background: rgba(255, 176, 0, 0.2);
+  color: #ffcf66;
+  outline: 1px dashed rgba(255, 176, 0, 0.7);
+  padding: 0 .3em;
+  border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------
  * footer
  * ------------------------------------------------------------------- */
-.projects-footer {
+.projects-footer,
+.project-detail__footnote {
   font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.3);
   padding: 0 0 4.8rem;

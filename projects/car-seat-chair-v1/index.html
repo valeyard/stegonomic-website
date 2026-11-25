@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Car seat computer chair (V1) | Stegonomic Studios</title>
+    <meta name="description" content="A real car seat converted into a desk chair, with its powered adjustment working and a custom power system that switches between mains and battery automatically.">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../../css/base.css">
+    <link rel="stylesheet" href="../../css/vendor.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/projects.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="../../js/modernizr.js"></script>
+    <script src="../../js/pace.min.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="../../images/mobile-logo.png" type="image/x-icon">
+    <link rel="icon" href="../../images/mobile-logo.png" type="image/x-icon">
+
+</head>
+
+<body class="page-projects">
+
+    <div id="particles-js" class="projects-particles" aria-hidden="true"></div>
+    <div class="projects-vignette" aria-hidden="true"></div>
+
+    <!-- header
+    ================================================== -->
+    <header class="projects-header">
+        <a class="projects-back" href="../../projects.html">&larr; All projects</a>
+        <a class="projects-logo" href="../../index.html">
+            <img src="../../images/horizontal-logo-trimmed.png" alt="Stegonomic Studios — Home">
+        </a>
+    </header>
+
+    <main class="projects">
+
+        <div class="row projects-intro">
+            <h3>Past Projects</h3>
+            <h1>Car seat computer chair (V1)</h1>
+            <p>
+                A real car seat converted into a desk chair, with its powered adjustment working and a custom power system that switches between mains and battery automatically.
+            </p>
+        </div>
+
+        <!-- write-up
+        ================================================== -->
+        <article class="row project-detail">
+
+            <div class="project__media project-detail__hero" data-initial="C">
+                <!-- TODO(car-seat-chair-v1): supply images/projects/car-seat-chair-v1/hero.jpg (16:9, ~1600x900). For a video instead, swap the <img> for
+                     <video src="../../images/projects/car-seat-chair-v1/hero.mp4" poster="../../images/projects/car-seat-chair-v1/hero.jpg" autoplay muted loop playsinline></video>.
+                     Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/car-seat-chair-v1/hero.jpg" alt="Car seat computer chair (V1)" onerror="this.remove()">
+            </div>
+
+            <div class="project-detail__body">
+            <p>
+                Car seats are some of the most comfortable, adjustable seats ever made, and they get scrapped in their thousands. I took a <!-- TODO(car-seat-chair-v1): fill in [make/model] --><span class="todo-placeholder">[make/model]</span> seat with powered adjustment and a built-in fan and turned it into my everyday computer chair, keeping all of its electronics working.
+            </p>
+            <p>
+                The interesting problem was power. A car seat expects a 12 V supply that can deliver a lot of current briefly: the fan draws a couple of amps continuously, but the adjustment motors pull around 12.5–15 A when they move. I designed a power system around a 19 V supply feeding two paths:
+            </p>
+            <ul>
+                <li>a buck converter stepping down to a 12 V rail for the seat</li>
+                <li>a charger module (HW-845) keeping an onboard battery topped up</li>
+            </ul>
+            <p>
+                A dual-Schottky diode OR-ing circuit combines the mains-derived rail and the battery. When the chair is plugged in, it runs from mains; unplug it and it fails over to battery seamlessly, with no switch and no interruption. So the chair can move around the room without trailing cables and still adjust.
+            </p>
+            <p>
+                V1 is fully functional and in daily use. It's built for function first, so the finish is utilitarian. A V2 with a more feature-rich seat and proper aesthetic work is on the list.
+            </p>
+            </div>
+
+            <h3>Built with</h3>
+            <ul class="project__tags">
+                <li><!-- TODO(car-seat-chair-v1): fill in [seat make/model] --><span class="todo-placeholder">[seat make/model]</span></li>
+                <li>19 V PSU</li>
+                <li>HW-845 charger</li>
+                <li>buck converter</li>
+                <li>dual-Schottky OR-ing failover</li>
+                <li><!-- TODO(car-seat-chair-v1): fill in [battery type/capacity] --><span class="todo-placeholder">[battery type/capacity]</span></li>
+                <li><!-- TODO(car-seat-chair-v1): fill in [base/mounting, e.g. office chair base with printed adapter brackets] --><span class="todo-placeholder">[base/mounting, e.g. office chair base with printed adapter brackets]</span></li>
+            </ul>
+
+        </article>
+
+        <!-- gallery
+        ================================================== -->
+        <div class="row projects-grid project-detail__gallery">
+
+            <div class="project__media" data-initial="C">
+                <!-- TODO(car-seat-chair-v1): supply images/projects/car-seat-chair-v1/gallery-1.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/car-seat-chair-v1/gallery-1.jpg" alt="Car seat computer chair (V1), gallery image 1" loading="lazy" onerror="this.remove()">
+            </div>
+
+            <div class="project__media" data-initial="C">
+                <!-- TODO(car-seat-chair-v1): supply images/projects/car-seat-chair-v1/gallery-2.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/car-seat-chair-v1/gallery-2.jpg" alt="Car seat computer chair (V1), gallery image 2" loading="lazy" onerror="this.remove()">
+            </div>
+
+            <div class="project__media" data-initial="C">
+                <!-- TODO(car-seat-chair-v1): supply images/projects/car-seat-chair-v1/gallery-3.jpg (16:9). Until it exists, onerror removes the
+                     <img> and the lettered placeholder shows instead. -->
+                <img src="../../images/projects/car-seat-chair-v1/gallery-3.jpg" alt="Car seat computer chair (V1), gallery image 3" loading="lazy" onerror="this.remove()">
+            </div>
+
+        </div> <!-- end gallery -->
+
+    </main>
+
+    <footer class="row projects-footer">
+        <span>© 2026 Stegonomic. All rights reserved.</span>
+    </footer>
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/plugins.js"></script>
+    <script src="../../js/polygons.js"></script>
+
+</body>
+
+</html>

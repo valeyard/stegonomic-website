@@ -58,72 +58,87 @@
 
         <!-- project list
         ==================================================
-        To add a project, copy one <article class="project"> block.
-          - Image: put it in images/projects/ (16:9 works best, ~1200x675).
-            Leave the <img> out to get the lettered placeholder instead.
-          - Tags: one <li> per tag (year, platform, role, tech...).
-          - Links: delete any you don't need.
+        To add a project, copy one <article class="project"> block and one
+        projects/<slug>/index.html page.
+          - Media: images/projects/<slug>/hero.jpg (16:9, ~1600x900) plus
+            gallery-1.jpg..gallery-3.jpg. A missing image removes itself
+            (onerror) and the lettered placeholder shows instead.
+          - Tags: one <li> per "Built with" item.
+          - [Unfilled copy]: <span class="todo-placeholder"> + a TODO comment.
         -->
         <div class="row projects-grid">
 
             <article class="project">
-                <div class="project__media" data-initial="P">
-                    <!-- <img src="images/projects/project-one.jpg" alt="Screenshot of Project One" loading="lazy"> -->
+                <div class="project__media" data-initial="S">
+                    <!-- TODO(spiritomb): supply images/projects/spiritomb/hero.jpg (16:9). Until it exists, onerror removes the
+                         <img> and the lettered placeholder shows instead. -->
+                    <img src="images/projects/spiritomb/hero.jpg" alt="Giant Spiritomb build" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
                     <ul class="project__tags">
-                        <li>2025</li>
-                        <li>PC</li>
-                        <li>Lead developer</li>
+                        <li><!-- TODO(spiritomb): fill in [printer(s) and materials] --><span class="todo-placeholder">[printer(s) and materials]</span></li>
+                        <li><!-- TODO(spiritomb): fill in [CAD software] --><span class="todo-placeholder">[CAD software]</span></li>
+                        <li><!-- TODO(spiritomb): fill in [display / lighting hardware] --><span class="todo-placeholder">[display / lighting hardware]</span></li>
+                        <li><!-- TODO(spiritomb): fill in [controller] --><span class="todo-placeholder">[controller]</span></li>
+                        <li>filler, primer and hand painting</li>
                     </ul>
-                    <h2 class="project__title">Project One</h2>
+                    <h2 class="project__title">Giant Spiritomb build</h2>
                     <p class="project__desc">
-                        One or two sentences on what it is, what you did on it and what makes it worth a look.
+                        A life-size, fully lit model of Spiritomb, with an animated holographic face that appears to float inside the stone.
                     </p>
                     <ul class="project__links">
-                        <li><a href="#">Play</a></li>
-                        <li><a href="#">Trailer</a></li>
-                        <li><a href="#">Source</a></li>
+                        <li><a href="projects/spiritomb/">Read more</a></li>
                     </ul>
                 </div>
             </article>
 
             <article class="project">
-                <div class="project__media" data-initial="P">
-                    <!-- <img src="images/projects/project-two.jpg" alt="Screenshot of Project Two" loading="lazy"> -->
+                <div class="project__media" data-initial="C">
+                    <!-- TODO(car-seat-chair-v1): supply images/projects/car-seat-chair-v1/hero.jpg (16:9). Until it exists, onerror removes the
+                         <img> and the lettered placeholder shows instead. -->
+                    <img src="images/projects/car-seat-chair-v1/hero.jpg" alt="Car seat computer chair (V1)" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
                     <ul class="project__tags">
-                        <li>2024</li>
-                        <li>Web</li>
-                        <li>Design &amp; code</li>
+                        <li><!-- TODO(car-seat-chair-v1): fill in [seat make/model] --><span class="todo-placeholder">[seat make/model]</span></li>
+                        <li>19 V PSU</li>
+                        <li>HW-845 charger</li>
+                        <li>buck converter</li>
+                        <li>dual-Schottky OR-ing failover</li>
+                        <li><!-- TODO(car-seat-chair-v1): fill in [battery type/capacity] --><span class="todo-placeholder">[battery type/capacity]</span></li>
+                        <li><!-- TODO(car-seat-chair-v1): fill in [base/mounting, e.g. office chair base with printed adapter brackets] --><span class="todo-placeholder">[base/mounting, e.g. office chair base with printed adapter brackets]</span></li>
                     </ul>
-                    <h2 class="project__title">Project Two</h2>
+                    <h2 class="project__title">Car seat computer chair (V1)</h2>
                     <p class="project__desc">
-                        One or two sentences on what it is, what you did on it and what makes it worth a look.
+                        A real car seat converted into a desk chair, with its powered adjustment working and a custom power system that switches between mains and battery automatically.
                     </p>
                     <ul class="project__links">
-                        <li><a href="#">Visit</a></li>
+                        <li><a href="projects/car-seat-chair-v1/">Read more</a></li>
                     </ul>
                 </div>
             </article>
 
             <article class="project">
-                <div class="project__media" data-initial="P">
-                    <!-- <img src="images/projects/project-three.jpg" alt="Screenshot of Project Three" loading="lazy"> -->
+                <div class="project__media" data-initial="E">
+                    <!-- TODO(esp32-doorbell): supply images/projects/esp32-doorbell/hero.jpg (16:9). Until it exists, onerror removes the
+                         <img> and the lettered placeholder shows instead. -->
+                    <img src="images/projects/esp32-doorbell/hero.jpg" alt="ESP32 wireless doorbell" loading="lazy" onerror="this.remove()">
                 </div>
                 <div class="project__body">
                     <ul class="project__tags">
-                        <li>2023</li>
-                        <li>Mobile</li>
-                        <li>Solo project</li>
+                        <li>ESP32-C3 / ESP32-WROOM-32</li>
+                        <li>Arduino / ESP-IDF</li>
+                        <li>MQTT (Mosquitto in Docker)</li>
+                        <li>WebSockets</li>
+                        <li>HTML/JS</li>
+                        <li><!-- TODO(esp32-doorbell): fill in [printed enclosures, if any] --><span class="todo-placeholder">[printed enclosures, if any]</span></li>
                     </ul>
-                    <h2 class="project__title">Project Three</h2>
+                    <h2 class="project__title">ESP32 wireless doorbell</h2>
                     <p class="project__desc">
-                        One or two sentences on what it is, what you did on it and what makes it worth a look.
+                        A self-built wireless doorbell system on ESP32 microcontrollers, with a local MQTT backend and a live monitoring dashboard in the browser.
                     </p>
                     <ul class="project__links">
-                        <li><a href="#">Details</a></li>
+                        <li><a href="projects/esp32-doorbell/">Read more</a></li>
                     </ul>
                 </div>
             </article>
